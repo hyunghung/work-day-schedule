@@ -52,7 +52,19 @@ function savetoLocalStorage(event) {
   localStorage.setItem(timeBlockId, userInput);
 }
 
-
+function loadFromLocalStorage() {
+  for (let time = 9; time <= 17; time++) {
+    var hourEl = document.getElementById('hour-' + time);
+    var savedValue = localStorage.getItem('hour-' + time);
+    if (savedValue !== null) {
+      var textarea = hourEl.querySelector('.description');
+      textarea.value = savedValue;
+    }else if (savedValue === null) {
+      savedValue = [];
+    };
+  }
+}
+loadFromLocalStorage();
 
   //
   // TODO: Add code to display the current date in the header of the page.
