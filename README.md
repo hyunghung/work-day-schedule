@@ -7,4 +7,4 @@ For this project, I was asked to make a work schedule that would turn a specific
 # Links 
 Git Hub: https://github.com/hyunghung/work-day-schedule
 
-Deployed: 
+Deployed: https://hyunghung.github.io/work-day-schedule/
