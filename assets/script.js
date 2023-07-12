@@ -2,7 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var currentDayEl = $("#currentDay");
-var saveBtnEl = $(".saveBtn");
 var descriptionEl = $(".description");
 var hourEl = document.getElementById('hour-' + time);
 var time;
@@ -14,7 +13,10 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  saveBtnEl.on("click", savetoLocalStorage);
+  var saveButtons = document.querySelectorAll(".saveBtn");
+  for (var i = 0; i < saveButtons.length; i++) {
+    saveButtons[i].addEventListener('click', savetoLocalStorage);
+  }
 
 
   //
@@ -43,10 +45,14 @@ $(function () {
   // attribute of each time-block be used to do this?
 
 //Saves user input to local storage under the "description" key
-function savetoLocalStorage(description) {
-  var description = document.getElementById("descrption").value;
-  localStorage.setItem("description", description);
+function savetoLocalStorage(event) {
+  var textarea = event.target.parentNode.querySelector('.description');
+  var userInput = textarea.value;
+  var timeBlockId = event.target.parentNode.id;
+  localStorage.setItem(timeBlockId, userInput);
 }
+
+
 
   //
   // TODO: Add code to display the current date in the header of the page.
