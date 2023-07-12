@@ -5,3 +5,6 @@ For this project, I was asked to make a work schedule that would turn a specific
 ![image](https://github.com/hyunghung/work-day-schedule/assets/97567582/799494fc-8409-4009-a2a8-c8c53811e123)
 
 # Links 
+Git Hub: https://github.com/hyunghung/work-day-schedule
+
+Deployed: 
