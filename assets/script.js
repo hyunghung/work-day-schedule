@@ -25,7 +25,7 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  var currentHour = 13; // Changes time to make sure the colors work
+  var currentHour = dayjs().format("HH"); // Changes time to make sure the colors work
   for (let time = 9; time <= 17; time++) {
   var hourEl = document.getElementById('hour-' + time);
 
